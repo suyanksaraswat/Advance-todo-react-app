@@ -3,7 +3,8 @@ import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import './App.css';
 import './fonts/font-awesome.css';
-
+import ls from 'local-storage';
+/*
 var todos = [
 	{
 		todoTitle: 'Do some coding',
@@ -13,6 +14,8 @@ var todos = [
 		todoDueDate: '2020-07-19'
 	}
 ]
+*/
+var todos = []
 
 class App extends Component {
 
@@ -22,7 +25,6 @@ class App extends Component {
 			todos
 		};
 		this.handleAddTodo = this.handleAddTodo.bind(this);
-		console.log('todos- ',todos);
 	}
 
 	handleRemoveTodo(index) {
@@ -33,6 +35,12 @@ class App extends Component {
 		})
 	}
 
+	handleStatusTodo(index) {
+		const newTodos = [...this.state.todos];
+		newTodos[index].todoStatus = !this.state.todos[index].todoStatus;
+		this.setState({todos: [...newTodos]});
+	}
+	
 	handleAddTodo(todo) {
 		this.setState({todos: [...this.state.todos, todo]});
 	}
@@ -63,9 +71,10 @@ class App extends Component {
 									{"  "}
 									<small><span className="badge badge-secondary">{todo.todoDueDate}</span></small>
 								</h4>
+								<button className="btn btn-info btn-sm float-right" onClick={this.handleStatusTodo.bind(this, index)}><span><i className="fa fa-info-circle" aria-hidden="true"></i></span>&nbsp;&nbsp; {todo.todoStatus ? 'Done' : 'In Progress'}</button>
 								<p><i className="fa fa-user-circle-o" aria-hidden="true"></i> {todo.todoResponsible}</p>
 								<p className="text-justify">{todo.todoDescription}</p>
-								<button className="btn btn-danger btn-sm float-right" onClick={this.handleRemoveTodo.bind(this, index)}><span><i className="fa fa-trash-o" aria-hidden="true"></i></span>&nbsp;&nbsp; Delete</button>
+								<button className="btn btn-danger btn-sm float-right" onClick={this.handleRemoveTodo.bind(this, index)}><span><i className="fa fa-trash-o" aria-hidden="true"></i></span>&nbsp;&nbsp; Delete </button>
 							</li>
 							)}
 						</ul>

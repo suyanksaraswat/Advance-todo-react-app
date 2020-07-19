@@ -8,10 +8,11 @@ class TodoInput extends Component {
 
 		this.state = {
 			todoTitle: '',
-			todoResponsible: '',
+			todoResponsible: 'Suyank',
 			todoDescription: '',
 			todoPriority: 'lowest',
-			todoDueDate: ''
+			todoDueDate: '',
+			todoStatus: false
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -34,10 +35,11 @@ class TodoInput extends Component {
 		this.props.onAddTodo(this.state);
 		this.setState({
 			todoTitle: '',
-			todoResponsible: '',
+			todoResponsible: 'Suyank',
 			todoDescription: '',
 			todoPriority: 'lowest',
-			todoDueDate: ''
+			todoDueDate: '',
+			todoStatus: false
 		});
 	}
 
@@ -107,6 +109,19 @@ class TodoInput extends Component {
 							value={this.state.todoDueDate} 
 							onChange={this.handleInputChange}
 						/>
+					</div>
+					<div className="form-group">
+						<label htmlFor="inputTodoStatus" className="control-label text-muted"><small>Status</small></label>
+						<select name="todoStatus"
+							type="text"
+							className="form-control"
+							id="inputTodoStatus"
+							value={this.state.todoStatus}
+							onChange={this.handleInputChange}
+							aria-describedby="Todo Status">
+							<option>false</option>
+							<option>true</option>
+						</select><br/>
 					</div>
 					<div className="form-group">
 						<button type="submit" className="btn btn-primary float-right">Add Todo</button>
