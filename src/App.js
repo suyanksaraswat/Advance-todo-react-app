@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
-import logo from './logo.svg';
 import './App.css';
 import './fonts/font-awesome.css';
 
