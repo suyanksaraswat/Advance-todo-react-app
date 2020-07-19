@@ -12,7 +12,8 @@ class TodoInput extends Component {
 			todoDescription: '',
 			todoPriority: 'lowest',
 			todoDueDate: '',
-			todoStatus: false
+			todoStatus: false,
+			todoError: ''
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -31,16 +32,23 @@ class TodoInput extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		console.log('this.state: ', this.state);
-		this.props.onAddTodo(this.state);
-		this.setState({
-			todoTitle: '',
-			todoResponsible: 'Suyank',
-			todoDescription: '',
-			todoPriority: 'lowest',
-			todoDueDate: '',
-			todoStatus: false
-		});
+		if (this.state.todoTitle === '' || this.state.todoDescription === '' || this.state.todoDueDate === '') {
+			this.setState({
+				todoError: 'Title, Description and Due Date cannot be empty'
+			});
+		}
+		else {
+			this.props.onAddTodo(this.state);
+			this.setState({
+				todoTitle: '',
+				todoResponsible: 'Suyank',
+				todoDescription: '',
+				todoPriority: 'lowest',
+				todoDueDate: '',
+				todoStatus: false,
+				todoError: ''
+			});
+		}
 	}
 
 	render() {
@@ -111,21 +119,9 @@ class TodoInput extends Component {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="inputTodoStatus" className="control-label text-muted"><small>Status</small></label>
-						<select name="todoStatus"
-							type="text"
-							className="form-control"
-							id="inputTodoStatus"
-							value={this.state.todoStatus}
-							onChange={this.handleInputChange}
-							aria-describedby="Todo Status">
-							<option>false</option>
-							<option>true</option>
-						</select><br/>
-					</div>
-					<div className="form-group">
 						<button type="submit" className="btn btn-primary float-right">Add Todo</button>
 					</div>
+					<span className="aler alert-danger">{this.state.todoError}</span>
 				</form>
 			</div>
 			)

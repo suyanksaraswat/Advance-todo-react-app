@@ -70,8 +70,8 @@ class App extends Component {
 									<small><span className="badge badge-secondary">{todo.todoPriority}</span></small>
 									{"  "}
 									<small><span className="badge badge-secondary">{todo.todoDueDate}</span></small>
+									<button className="btn btn-info btn-sm float-right" onClick={this.handleStatusTodo.bind(this, index)}><span><i className="fa fa-info-circle" aria-hidden="true"></i></span>&nbsp;&nbsp; {todo.todoStatus ? 'Done' : 'In Progress'}</button>
 								</h4>
-								<button className="btn btn-info btn-sm float-right" onClick={this.handleStatusTodo.bind(this, index)}><span><i className="fa fa-info-circle" aria-hidden="true"></i></span>&nbsp;&nbsp; {todo.todoStatus ? 'Done' : 'In Progress'}</button>
 								<p><i className="fa fa-user-circle-o" aria-hidden="true"></i> {todo.todoResponsible}</p>
 								<p className="text-justify">{todo.todoDescription}</p>
 								<button className="btn btn-danger btn-sm float-right" onClick={this.handleRemoveTodo.bind(this, index)}><span><i className="fa fa-trash-o" aria-hidden="true"></i></span>&nbsp;&nbsp; Delete </button>
