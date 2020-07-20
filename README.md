@@ -4,6 +4,7 @@ Specifications of Todo Application:
 - All Todo have status info, which contain states: In Progress and Done. (You can switch state by click) 
 - For styling, we have used Bootstrap.
 - Show total number of todo in header.
+- Have done jest and snap test for every component.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
