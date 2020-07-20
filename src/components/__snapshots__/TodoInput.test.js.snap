@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="col"
+  data-testid="todoinput"
+>
+  <br />
+  <br />
+  <br />
+  <h4>
+    Add New Todo
+  </h4>
+  <br />
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        aria-describedby="Todo Title"
+        className="form-control"
+        id="inputTodoTitle"
+        name="todoTitle"
+        onChange={[Function]}
+        placeholder="Enter Title"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label text-muted"
+        htmlFor="inputTodoPriority"
+      >
+        <small>
+          Priority
+        </small>
+      </label>
+      <select
+        aria-describedby="Todo Priority"
+        className="form-control"
+        id="inputTodoPriority"
+        name="todoPriority"
+        onChange={[Function]}
+        type="text"
+        value="lowest"
+      >
+        <option>
+          lowest
+        </option>
+        <option>
+          low
+        </option>
+        <option>
+          medium
+        </option>
+        <option>
+          high
+        </option>
+        <option>
+          emergency
+        </option>
+      </select>
+      <br />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label text-muted"
+        htmlFor="inputTodoDescription"
+      >
+        <small>
+          Description
+        </small>
+      </label>
+      <textarea
+        aria-describedby="Todo Description"
+        className="form-control"
+        id="inputTodoDescription"
+        name="todoDescription"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label text-muted"
+        htmlFor="inputTodoResponsible"
+      >
+        <small>
+          Responsible
+        </small>
+      </label>
+      <select
+        aria-describedby="Todo Responsible"
+        className="form-control"
+        id="inputTodoResponsible"
+        name="todoResponsible"
+        onChange={[Function]}
+        type="text"
+        value="Suyank"
+      >
+        <option>
+          Suyank
+        </option>
+        <option>
+          Abhinav
+        </option>
+        <option>
+          Ashwini
+        </option>
+      </select>
+      <br />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label text-muted"
+        htmlFor="inputDueDate"
+      >
+        <small>
+          Due Date
+        </small>
+      </label>
+      <input
+        className="form-control"
+        id="inputDueDate"
+        name="todoDueDate"
+        onChange={[Function]}
+        type="date"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <button
+        className="btn btn-primary float-right"
+        type="submit"
+      >
+        Add Todo
+      </button>
+    </div>
+    <span
+      className="aler alert-danger"
+    >
+      
+    </span>
+  </form>
+</div>
+`;

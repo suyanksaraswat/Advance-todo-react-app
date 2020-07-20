@@ -53,7 +53,7 @@ class TodoInput extends Component {
 
 	render() {
 		return (
-			<div className="col">
+			<div data-testid="todoinput" className="col">
 				<br/><br/><br/>
 				<h4>Add New Todo</h4><br/>
 				<form onSubmit={this.handleSubmit}>
