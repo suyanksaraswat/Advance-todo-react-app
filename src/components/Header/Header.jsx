@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../logo.svg';
-import './../App.css';
-import './../fonts/font-awesome.css';
+import logo from './../../logo.svg';
+import './../../App.css';
+import './../../fonts/font-awesome.css';
 
 type HeaderProps = {
 	length: Number,
@@ -9,14 +9,14 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
 	return (
-		<>
+		<div data-testid="header">
 			<nav className="navbar fixed-top navbar-dark bg-dark">
 				<img src={logo} className="App-logo" alt="logo" />
 				<h1 className="navbar-brand">
 					Todo Count: <span className="badge badge-pill badge-primary">{props.length}</span>
 				</h1>
 			</nav>
-		</>
+		</div>
 	)
 }
 

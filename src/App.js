@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import TodoInput from './components/TodoInput';
+import Header from './components/Header/Header';
+import TodoInput from './components/TodoInput/TodoInput';
 import './App.css';
 import './fonts/font-awesome.css';
-import ls from 'local-storage';
+//import ls from 'local-storage';
 /*
 var todos = [
 	{

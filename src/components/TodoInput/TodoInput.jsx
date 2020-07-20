@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './../App.css';
-import './../fonts/font-awesome.css';
+import './../../App.css';
+import './../../fonts/font-awesome.css';
 
 class TodoInput extends Component {
 	constructor(props) {
@@ -121,7 +121,7 @@ class TodoInput extends Component {
 					<div className="form-group">
 						<button type="submit" className="btn btn-primary float-right">Add Todo</button>
 					</div>
-					<span className="aler alert-danger">{this.state.todoError}</span>
+					<span className="alert-danger">{this.state.todoError}</span>
 				</form>
 			</div>
 			)

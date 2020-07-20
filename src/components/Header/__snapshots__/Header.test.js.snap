@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1 1`] = `
+<div
+  data-testid="header"
+>
+  <nav
+    className="navbar fixed-top navbar-dark bg-dark"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <h1
+      className="navbar-brand"
+    >
+      Todo Count: 
+      <span
+        className="badge badge-pill badge-primary"
+      >
+        10
+      </span>
+    </h1>
+  </nav>
+</div>
+`;
+
+exports[`matches snapshot 2 1`] = `
+<div
+  data-testid="header"
+>
+  <nav
+    className="navbar fixed-top navbar-dark bg-dark"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <h1
+      className="navbar-brand"
+    >
+      Todo Count: 
+      <span
+        className="badge badge-pill badge-primary"
+      >
+        2
+      </span>
+    </h1>
+  </nav>
+</div>
+`;
