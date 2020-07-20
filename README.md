@@ -1,7 +1,9 @@
 Specifications of Todo Application:
-- Add new Todo with details: Title, Description, Priority, Resposible and Due Date.
+- Add new Todo with details in form (with error handling): Title, Description, Priority, Resposible and Due Date.
 - Show all todo below the form.
 - All Todo have status info, which contain states: In Progress and Done. (You can switch state by click) 
+- For styling, we have used Bootstrap.
+- Show total number of todo in header.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
