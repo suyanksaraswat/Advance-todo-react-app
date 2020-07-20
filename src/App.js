@@ -3,7 +3,8 @@ import Header from './components/Header/Header';
 import TodoInput from './components/TodoInput/TodoInput';
 import './App.css';
 import './fonts/font-awesome.css';
-//import ls from 'local-storage';
+import ls from 'local-storage';
+
 /*
 var todos = [
 	{
@@ -15,7 +16,8 @@ var todos = [
 	}
 ]
 */
-var todos = []
+
+var todos = ls.get('todos')
 
 class App extends Component {
 
@@ -27,22 +29,34 @@ class App extends Component {
 		this.handleAddTodo = this.handleAddTodo.bind(this);
 	}
 
-	handleRemoveTodo(index) {
-		this.setState({
+	async handleRemoveTodo(index) {
+		await this.setState({
 			todos: this.state.todos.filter(function(e, i) {
 				return i !== index;
 			})
 		})
+		await ls.set('todos', this.state.todos);
+		this.setState({
+			todos: ls.get('todos')
+		})
 	}
 
-	handleStatusTodo(index) {
+	async handleStatusTodo(index) {
 		const newTodos = [...this.state.todos];
 		newTodos[index].todoStatus = !this.state.todos[index].todoStatus;
 		this.setState({todos: [...newTodos]});
+		ls.set('todos', this.state.todos);
+		await this.setState({
+			todos: ls.get('todos')
+		})
 	}
 	
-	handleAddTodo(todo) {
+	async handleAddTodo(todo) {
 		this.setState({todos: [...this.state.todos, todo]});
+		ls.set('todos', [...this.state.todos, todo]);
+		await this.setState({
+			todos: ls.get('todos')
+		})
 	}
 
 	render() {
