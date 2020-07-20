@@ -17,7 +17,7 @@ var todos = [
 ]
 */
 
-var todos = ls.get('todos')
+var todos = ls.get('todos') || []
 
 class App extends Component {
 
